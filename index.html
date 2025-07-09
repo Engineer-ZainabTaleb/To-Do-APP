@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enhanced Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h1>Todo App</h1>
+    <div class="container">
+        <div class="input-section" aria-label="Add new task">
+            <input type="text" id="taskInput" placeholder="Write your task..." aria-label="Task description" />
+            <input type="date" id="dueDate" aria-label="Due date" />
+            <select id="priority" aria-label="Priority level">
+                <option value="medium" selected>Medium Priority</option>
+                <option value="high">High Priority</option>
+                <option value="low">Low Priority</option>
+            </select>
+            <button id="newTask" class="add-btn" aria-label="Add task">+</button>
+        </div>
+
+        <div class="filters" role="region" aria-label="Filter tasks and clear completed tasks">
+            <div>
+                <button class="filter-btn active" onclick="setFilter('all')" aria-pressed="true"
+                    id="filter-all">All</button>
+                <button class="filter-btn" onclick="setFilter('active')" aria-pressed="false"
+                    id="filter-active">Active</button>
+                <button class="filter-btn" onclick="setFilter('completed')" aria-pressed="false"
+                    id="filter-completed">Completed</button>
+            </div>
+            <div class="counter" id="counter" aria-live="polite"></div>
+            <button class="clear-completed-btn" id="clearCompletedBtn" aria-label="Clear completed tasks">Clear
+                Completed</button>
+        </div>
+
+        <ul id="task-list" aria-live="polite" aria-relevant="additions removals"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
